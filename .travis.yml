@@ -15,7 +15,8 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t test-env .
+  #- docker build -t test-env .
+  - docker build -t test-env --build-arg FAVORITE_FOOD=${FAVORITE_FOOD} .
   - docker tag test-env datacam270/test-env:latest
 
 after_success:
